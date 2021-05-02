@@ -49,6 +49,14 @@
             }
         });
 
+        // pause animation
+        if (tl.paused()) {
+            tl.play()
+        } else {
+            tl.pause();
+            tl.paused(true);
+        }
+
         TweenMax.to('h1', 1.5, { opacity: 1, y: 0, delay: 1 })
     </script>
 </body>
