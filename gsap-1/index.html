@@ -13,14 +13,27 @@
     <div class="div_1">
         <h1>Principle of Design</h1>
         <button id="cta">Explore</button>
-    </div>
 
 
-    <div class="panel">
-        <img src="hero1.svg" alt="hero" id="light">
-        <p>Some great line about engineering and how we did something everyone will love</p>
-        <div class="box"></div>
+
+        <div class="panel">
+            <img src="hero1.svg" alt="hero" id="light">
+            <p>Some great line about engineering and how we did something everyone will love</p>
+            <div class="box"></div>
+        </div>
     </div>
+
+    <section class="dark">
+        <!-- <div class="box1"></div> -->
+        <div class="content">
+            <h2>This is Awesome</h2>
+            <h5 class="pp">Get the Best Design around the Web</h5>
+        </div>
+        <img class="img1" src="./hero2.svg" alt="hero2">
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
     <script>
@@ -59,6 +72,25 @@
 
         TweenMax.to('h1', 1.5, { opacity: 1, y: 0, delay: 1 })
     </script>
+
+    <!-- scroll animation -->
+    <script>
+        // gsap.to(".box1", {
+        //     scrollTrigger: {
+        //         trigger: '.box1',
+        //         start: 'bottom center'
+        //     },
+        //     x: 500
+        // })
+
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.dark',
+            }
+        })
+        tl.from('.img1', { x: 200, opacity: 0, duration: 1.5 })
+    </script>
+
 </body>
 
 </html>
