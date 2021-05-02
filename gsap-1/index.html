@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Animation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="div_1">
+        <h1>Principle of Design</h1>
+        <button id="cta">Explore</button>
+    </div>
+
+
+    <div class="panel">
+        <img src="hero1.svg" alt="hero" id="light">
+        <p>Some great line about engineering and how we did something everyone will love</p>
+        <div class="box"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
+    <script>
+
+        var tl = new TimelineMax({
+            paused: true,
+            // yoyo: true  //this will automatically reverse
+            // repeat:1,
+
+
+        })
+
+        tl.to('.panel', 1, { scaleY: 1, height: '100vh' });
+        tl.to('#light', 1, { opacity: 1, y: 0, delay: 1 });
+        tl.to('p', 1, { opacity: 1, y: 20, }); //delay: 1.4
+        tl.to('.box', 2, { opacity: 1, scale: 1, ease: Elastic.easeOut.config(1, 0.3) }, "-=3.5");
+        tl.reversed(true);
+
+        document.getElementById('cta').addEventListener('click', () => {
+            // tl.play()
+            tl.reversed(!tl.reversed());
+            if (tl.reversed()) {
+                tl.reverse()
+            } else {
+                tl.play()
+            }
+        });
+
+        TweenMax.to('h1', 1.5, { opacity: 1, y: 0, delay: 1 })
+    </script>
+</body>
+
+</html>
