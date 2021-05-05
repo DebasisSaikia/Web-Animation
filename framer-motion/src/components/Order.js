@@ -17,8 +17,13 @@ const containerVariants = {
       when: 'beforeChildren',  //before any animation occurs
       staggerChildren: 0.4  //stagger or delay the properties of all the children
     }
+  },
+  exit: {
+    opacity: 0
   }
+
 }
+
 
 const childVariants = {
   hidden: {
@@ -60,7 +65,7 @@ const Order = ({ pizza, setShowModal }) => {
       <AnimatePresence>
         {showTitle && (<motion.h2 exit={{ y: -1000 }}>Thank you for your order :)</motion.h2>)}
       </AnimatePresence>
-      <motion.p variants={childVariants}>You ordered a {pizza.base} pizza with:</motion.p>
+      <motion.p variants={childVariants} exit='exit'>You ordered a {pizza.base} pizza with:</motion.p>
       <motion.div variants={childVariants}>
         {pizza.toppings.map(topping => <div key={topping}>{topping}</div>)}
       </motion.div>
