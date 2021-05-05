@@ -16,6 +16,22 @@ const containerVariants = {
     }
   }
 }
+const buttonVariants = {
+  // visible: {
+  //   x: [0, -20, 20, -20, 20, 0],  //keyframes
+  //   transition: { delay: 2 }
+  // },
+  hover: {
+    // scale: [1.1, 1, 1.1, 1, 1.1, 1, 1.1, 1], //keyframes
+    scale: 1.1,
+    textShadow: '0px 0px 0px rgb(255,255,255)',
+    color: 'yellow',
+    transition: {
+      yoyo: Infinity,
+      duration: 0.3
+    }
+  }
+}
 
 const nextVariants = {
   hidden: {
@@ -51,7 +67,7 @@ const Base = ({ addBase, pizza }) => {
       {pizza.base && (
         <motion.div className="next" initial={{ x: '-100vw' }} animate={{ x: 0 }} transition={{ type: 'spring', stiffness: 120 }}>
           <Link to="/toppings">
-            <motion.button whileHover={{ scale: 1.1 }}>Next</motion.button>
+            <motion.button variants={buttonVariants} whileHover='hover'>Next</motion.button>
           </Link>
         </motion.div>
       )}

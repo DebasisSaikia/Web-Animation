@@ -8,9 +8,14 @@ const buttonVariants = {
   //   transition: { delay: 2 }
   // },
   hover: {
-    scale: [1.1, 1, 1.1, 1, 1.1, 1, 1.1, 1], //keyframes
+    // scale: [1.1, 1, 1.1, 1, 1.1, 1, 1.1, 1], //keyframes
+    scale: 1.1,
     textShadow: '0px 0px 0px rgb(255,255,255)',
-    color: 'yellow'
+    color: 'yellow',
+    transition: {
+      yoyo: Infinity,
+      duration: 0.3
+    }
   }
 }
 
