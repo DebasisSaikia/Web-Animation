@@ -23,7 +23,7 @@ const Base = ({ addBase, pizza }) => {
       {pizza.base && (
         <motion.div className="next" initial={{ x: '-100vw' }} animate={{ x: 0 }} transition={{ type: 'spring', stiffness: 120 }}>
           <Link to="/toppings">
-            <button>Next</button>
+            <motion.button whileHover={{ scale: 1.1 }}>Next</motion.button>
           </Link>
         </motion.div>
       )}
