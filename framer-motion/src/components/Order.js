@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const containerVariants = {
   hidden: {
@@ -41,13 +41,19 @@ const nextVariants = {
   }
 }
 
-const Order = ({ pizza }) => {
+const Order = ({ pizza, setShowModal }) => {
 
   const [showTitle, setShowTitle] = useState(true);
 
   setTimeout(() => {
     setShowTitle(false)
-  }, 4000)
+  }, 2000)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowModal(true)
+    }, 5000)
+  }, [setShowModal])
 
   return (
     <motion.div className="container order" variants={containerVariants} initial='hidden' animate='visible'>
