@@ -9,7 +9,7 @@
 }
 
 .box-container {
-  padding-bottom: 20rem;
+  /* padding-bottom: 20rem; */
   margin-bottom: 2rem;
   width: 20rem;
   height: 20rem;
@@ -20,4 +20,13 @@
   justify-content: center;
   /* border-radius: 10rem; */
   cursor: pointer;
+}
+
+.items {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #fff;
+  list-style: none;
+  padding: 2rem;
+  margin: 0.5rem;
 }
