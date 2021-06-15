@@ -3,3 +3,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.App {
+  padding: 5rem;
+}
+
+.box-container {
+  padding-bottom: 20rem;
+  width: 20rem;
+  height: 20rem;
+  background-color: rgb(235, 39, 39);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
