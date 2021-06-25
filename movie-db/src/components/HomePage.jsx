@@ -6,12 +6,15 @@ import Layout from "./Layout";
 import Card from "./Card";
 import Loader from "./Loader";
 import SearchBar from "./SearchBar";
+import Button from "./Button";
 
 const HomePage = () => {
-  const { state, error, loading, setSearchTerm } = useFetchHome();
+  const { state, error, loading, setSearchTerm, searchTerm, setLoadMore } =
+    useFetchHome();
 
-  console.log(state);
   const randomNum = Math.floor(Math.random() * 10) + 1;
+
+  if (error) return <div>Error Occured !! Please Reload the Page</div>;
 
   return (
     <>
@@ -27,7 +30,9 @@ const HomePage = () => {
 
       <SearchBar setSearchTerm={setSearchTerm} />
 
-      <Layout header="Popular movies">
+      <Layout
+        header={searchTerm ? `Result for ${searchTerm}` : "Popular movies"}
+      >
         {state.results.map((movie) => {
           return (
             <Card
@@ -43,7 +48,10 @@ const HomePage = () => {
           );
         })}
       </Layout>
-      <Loader />
+      {loading && <Loader />}
+      {state.page < state.total_pages && !loading && (
+        <Button text="Load More" clickButton={() => setLoadMore(true)} />
+      )}
     </>
   );
 };
