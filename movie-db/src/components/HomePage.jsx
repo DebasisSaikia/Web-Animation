@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useFetchHome } from "../custom-hooks/useFetchHome";
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config";
 
 const HomePage = () => {
-  const [state, setState] = useState();
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const { state, error, loading } = useFetchHome();
+  console.log(state);
+
   return <div>home components</div>;
 };
 
