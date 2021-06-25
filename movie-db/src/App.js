@@ -1,11 +1,13 @@
-import Navbar from './components/Navbar';
-import {GlobalStyles} from './GlobalStyles'
+import HomePage from "./components/HomePage";
+import Navbar from "./components/Navbar";
+import { GlobalStyles } from "./GlobalStyles";
 
 function App() {
   return (
     <div className="App">
-     <Navbar/>
-     <GlobalStyles/>
+      <Navbar />
+      <HomePage />
+      <GlobalStyles />
     </div>
   );
 }
