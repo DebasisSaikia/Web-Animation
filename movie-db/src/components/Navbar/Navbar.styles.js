@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const NavContainer = styled.div`
   background: var(--lgGray);
+  /* background: transparent; */
   padding: 0 20px;
 `;
 
