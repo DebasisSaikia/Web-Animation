@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import API from "../API";
+import { persistedState } from "../helpers";
 
 export const useFetchMovie = (movieId) => {
   const [state, setState] = useState({});
@@ -25,8 +26,22 @@ export const useFetchMovie = (movieId) => {
   }, [movieId]);
 
   useEffect(() => {
+
+    const sessionState = persistedState(movieId);
+
+    if (sessionState) {
+      setState(sessionState);
+      setLoading(false);
+      return;
+    }
+
     fetchData();
   }, [movieId, fetchData]);
+
+  // set to session
+  useEffect(() => {
+    sessionStorage.setItem(movieId, JSON.stringify(state))
+  }, [movieId, state])
 
   return { state, loading, error };
 };
