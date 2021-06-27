@@ -1,5 +1,6 @@
 import React from "react";
 import { LoadButton } from "./Button.style";
+import PropTypes from 'prop-types'
 
 const Button = ({ text, clickButton }) => {
   return (
@@ -8,5 +9,10 @@ const Button = ({ text, clickButton }) => {
     </LoadButton>
   );
 };
+
+Button.propTypes = {
+  text: PropTypes.string,
+  clickButton: PropTypes.func
+}
 
 export default Button;

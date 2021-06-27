@@ -1,5 +1,6 @@
 import React from "react";
 import { LayoutBody, LayoutContainer } from "./Layout.style";
+import PropTypes from 'prop-types'
 
 const Layout = ({ header, children }) => {
   return (
@@ -9,5 +10,9 @@ const Layout = ({ header, children }) => {
     </LayoutContainer>
   );
 };
+
+Layout.propTypes = {
+  header: PropTypes.string,
+}
 
 export default Layout;

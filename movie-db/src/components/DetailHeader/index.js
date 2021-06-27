@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types'
 import { Container, Content } from "./DetailHeader.style";
 
 const DetailHeader = ({ movieName }) => {
@@ -15,5 +16,9 @@ const DetailHeader = ({ movieName }) => {
     </Container>
   );
 };
+
+DetailHeader.propTypes = {
+  movieName: PropTypes.string
+}
 
 export default DetailHeader;
