@@ -206,6 +206,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 0.4rem;
 }
 
 .home_info span {
@@ -222,4 +223,14 @@ section {
     color: #fff !important;
     border-radius: 10rem;
     padding: 0.1rem;
+}
+
+.home_desc {
+    margin-top: 1rem;
+}
+
+.home_desc a {
+    color: black;
+    line-height: 1.6;
+    padding: 0 0.4rem;
 }
