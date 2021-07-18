@@ -8,7 +8,7 @@ import Variants from "./components/Variants";
 function App() {
   return (
     <div className="App">
-      <h1>Framer motion</h1>
+      <h1 className="main_text">Framer motion</h1>
       <Animate1 />
       {/* <Drag /> */}
       {/* <Variants /> */}

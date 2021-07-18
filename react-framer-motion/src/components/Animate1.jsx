@@ -18,7 +18,9 @@ const Animate1 = () => {
       className="box-container"
       onClick={() => setIsAnimating(!isAnimating)}
     >
-      <div className="box"></div>
+      <div className="box">
+        <p className="p_text">I am a Software engineer based in Bangalore</p>
+      </div>
     </motion.div>
   );
 };
