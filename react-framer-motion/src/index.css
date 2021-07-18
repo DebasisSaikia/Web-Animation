@@ -26,3 +26,36 @@ section {
 li {
   list-style: none;
 }
+
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #191919;
+  color: #dbd8d6
+}
+
+.loader-container h1 {
+  font-size: 1.5vw;
+  font-family: serif;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.loader-container h2 {
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.l-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #111;
+  z-index: 1;
+}

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 // import cn from "classnames";
 
-// import SectionHeader from "../SectionHeader";
+import SectionHeader from "../SectionHeader";
 
 // import gsap from "gsap";
 // import SplitText from "../../utils/Split3.min";
@@ -36,10 +36,11 @@ export default function About() {
 
     return (
         <section
+            className="about-section"
         // className={cn("about-section", { "is-reveal": reveal })}
         // data-scroll-section
         >
-            {/* <SectionHeader title="about" /> */}
+            <SectionHeader title="about" />
             <p
             // ref={ref} id="headline" className={cn({ "is-reveal": reveal })}
             >

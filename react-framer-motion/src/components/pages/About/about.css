@@ -1,0 +1,15 @@
+.about-section p {
+    font-size: 70px;
+    line-height: 1.12;
+    padding-top: 12rem;
+    /* opacity: 0; */
+}
+
+.about-section .is-reveal {
+    opacity: 1;
+}
+
+.about-section>div {
+    opacity: 0;
+    transform: translateY(0px);
+}
