@@ -2,7 +2,20 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
+
+export async function getServerSideProps(context) {
+  return {
+    redirect: {
+      destination: 'https://google.com',
+      permanent: false
+    }
+  }
+}
+
 export default function Home() {
+
+  console.log('My env: ', process.env.SECRET_KEY)
+  console.log('Public key: ', process.env.NEXT_PUBLIC_SECRET)
   return (
     <div className={styles.container}>
       <Head>
