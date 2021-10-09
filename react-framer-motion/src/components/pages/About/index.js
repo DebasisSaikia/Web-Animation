@@ -36,12 +36,13 @@ export default function About() {
 
     return (
         <section
-            className="about-section"
+            className="about-section " data-scroll-section
         // className={cn("about-section", { "is-reveal": reveal })}
         // data-scroll-section
         >
             <SectionHeader title="about" />
             <p
+                data-scroll data-scroll-speed="4"
             // ref={ref} id="headline" className={cn({ "is-reveal": reveal })}
             >
                 Flirty Flowers is a blog about flowers and the floral designers who make

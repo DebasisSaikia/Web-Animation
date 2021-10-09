@@ -3,7 +3,7 @@ import './nav.css'
 
 const Navbar = () => {
     return (
-        <div className="navbar">
+        <div className="navbar" data-scroll-section>
             <div>Menu</div>
             <div>Portfolio</div>
             <div>More</div>

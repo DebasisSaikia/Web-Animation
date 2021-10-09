@@ -57,6 +57,7 @@ function GalleryItem({
     return (
         <div
             className='gallery-item-wrapper'
+
             // className={cn("gallery-item-wrapper", { "is-reveal": onScreen })}
             ref={ref}
         >
@@ -112,7 +113,7 @@ export default function Gallery({ src, index, columnOffset }) {
     };
 
     return (
-        <section className="section-wrapper gallery-wrap">
+        <section className="section-wrapper gallery-wrap" data-scroll-section>
 
             <div className="gallery" ref={ref}>
                 <div className="gallery-counter">

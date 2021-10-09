@@ -33,3 +33,7 @@
 .header-menu li {
     margin: 10px 0;
 }
+
+.header_text {
+    position: fixed;
+}

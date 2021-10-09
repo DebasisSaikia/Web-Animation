@@ -1,0 +1,41 @@
+import React, { useEffect, useState } from "react";
+
+const UserList = () => {
+  const [users, setUsers] = useState([]);
+  const [term, setTerm] = useState("");
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const res = await fetch(`https://jsonplaceholder.typicode.com/users`);
+      const json = await res.json();
+      setUsers(json);
+      console.log(json);
+    };
+    fetchUsers();
+  }, []);
+
+  const allUsers = users.map((user) => {
+    return (
+      <div key={user.id}>
+        <p>
+          <strong>{user.name}</strong>
+        </p>
+      </div>
+    );
+  });
+
+  return (
+    <div>
+      <h1>UserList</h1>
+      <input
+        type="text"
+        value={term}
+        placeholder="Search Users"
+        onChange={(e) => setTerm(e.target.value)}
+      />
+      {allUsers}
+    </div>
+  );
+};
+
+export default UserList;
