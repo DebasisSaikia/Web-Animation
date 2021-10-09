@@ -24,6 +24,19 @@ const UserList = () => {
     );
   });
 
+//   search functionality
+let filterUsers=users.filter(({name})=>{
+    return name.indexOf(term)>=0;
+}).map((user) => {
+    return (
+      <div key={user.id}>
+        <p>
+          <strong>{user.name}</strong>
+        </p>
+      </div>
+    );
+  });
+
   return (
     <div>
       <h1>UserList</h1>
@@ -33,7 +46,7 @@ const UserList = () => {
         placeholder="Search Users"
         onChange={(e) => setTerm(e.target.value)}
       />
-      {allUsers}
+      {filterUsers}
     </div>
   );
 };
