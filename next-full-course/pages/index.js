@@ -3,16 +3,30 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 
-export async function getServerSideProps(context) {
+/**
+ * 
+ * export async function getServerSideProps(context) {
   return {
     redirect: {
       destination: 'https://google.com',
       permanent: false
+    },
+    notFound: true
+  }
+}
+ */
+
+export async function getStaticProps(context) {
+  console.log(context)
+
+  return {
+    props: {
+      count: Math.floor(Math.random() * 10)
     }
   }
 }
 
-export default function Home() {
+export default function Home(props) {
 
   console.log('My env: ', process.env.SECRET_KEY)
   console.log('Public key: ', process.env.NEXT_PUBLIC_SECRET)
@@ -26,7 +40,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          {props.count} <a href="https://nextjs.org">Next.js!</a>
         </h1>
       </main>
     </div>

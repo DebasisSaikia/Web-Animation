@@ -83,6 +83,7 @@ svg {
 
 /* ======================================= */
 
+n
 /* hero section */
 
 .hero {
@@ -233,4 +234,46 @@ section {
     color: black;
     line-height: 1.6;
     padding: 0 0.4rem;
+}
+
+.hero_img {
+    /* display: none; */
+}
+
+/* Responsive ================================= */
+
+/*media queries  */
+
+@media(min-width:780px) {
+    .nav_ham {
+        display: none;
+    }
+    nav>ul {
+        width: auto;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        margin-top: 0;
+        padding: 0;
+    }
+    ul>li {
+        padding-bottom: 0;
+        margin-left: 1.8rem;
+    }
+    nav {
+        flex-wrap: nowrap;
+    }
+}
+
+@media(min-width:992px) {
+    .hero {
+        background-color: #fff;
+    }
+    .hero_text {
+        width: 45%;
+    }
+    .hero_img {
+        /* display: flex; */
+        width: 55%;
+    }
 }
